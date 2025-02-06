@@ -446,7 +446,7 @@ impl Client {
         txn: &SignedTransaction,
     ) -> AptosResult<Response<PendingTransaction>> {
         let txn_payload = bcs::to_bytes(txn)?;
-        let url = self.build_path("transactions")?;
+        let url = self.build_path("transactions/submit")?;
 
         let response = self
             .inner
